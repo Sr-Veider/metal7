@@ -5,10 +5,12 @@ html, body{
     margin: 0;
     width: 100%;
     min-height: 100%;
+    overflow-x: hidden;
 }
 body {
     margin: 0;
     min-height: 100vh;
+    padding-top: 95px;
     background-image: url('assets/img/fundo2.jpeg');
     background-size: 35%;
     background-position: center;
@@ -89,4 +91,32 @@ body {
     width: 0%;
     background: #ff2b2b;
     z-index: 9999;
+}
+.banner-loop {
+    width: 100%;
+    height: 220px;
+    margin-top: 10px;
+    overflow: hidden;
+    background: #111;
+    position: relative;
+}
+.loop-track {
+    display: flex;
+    width: max-content;
+    animation: scrollLoop 20s linear infinite;
+}
+.loop-track img {
+    width: 400px;
+    height: 220px;
+    object-fit: cover;
+    margin-right: 10px;
+    border-radius: 10px;
+}
+@keyframes scrollLoop {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%);
+    }
 }

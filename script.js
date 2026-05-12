@@ -1,8 +1,11 @@
-<script>
-    window.addEventListener("scroll", () => {
-        const scrollTop = window.scrollY;
-        const alturaPagina = document.documentElement.scrollHeight - window.innerHeight;
-        const progresso = (scrollTop / alturaPagina) * 100
-        document.querySelector(".barra-rolagem").style.width = progresso + "%";
-    });
-</script>
+const slides = document.querySelectorAll(".slide");
+let atual = 0;
+function trocarSlide() {
+    slides[atual].classList.remove("active");
+    atual++;
+    if (atual >= slides.length) {
+        atual = 0;
+    }
+    slides[atual].classList.add("active");
+}
+setInterval(trocarSlide, 4000);
